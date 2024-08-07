@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://cisl5t1t6rwa"]
+
+[ext_resource type="Texture2D" uid="uid://c1i7eos51r50o" path="res://Ellipse 1.png" id="1_xr3wg"]
+[ext_resource type="Script" path="res://node_2d.gd" id="2_mwg3f"]
+
+[sub_resource type="GDScript" id="GDScript_8xros"]
+script/source = "extends Node
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6o0p4"]
+
+[node name="Node2D" type="Node2D"]
+script = SubResource("GDScript_8xros")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+script = ExtResource("2_mwg3f")
+
+[node name="Ellipse1" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-1.36424e-12, -1.19209e-07)
+scale = Vector2(0.358586, 0.358586)
+texture = ExtResource("1_xr3wg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("CircleShape2D_6o0p4")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D"]
+texture = ExtResource("1_xr3wg")
+
+[node name="Camera2D" type="Camera2D" parent="."]
